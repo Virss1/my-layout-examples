@@ -1,0 +1,20 @@
+{
+  "name": "my-layout-examples",
+  "version": "0.0.1",
+  "description": "here are some my layout examples made in HTML & CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "layout",
+    "gulp"
+  ],
+  "author": "Ivan Riskov",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
