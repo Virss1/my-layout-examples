@@ -1,0 +1,15 @@
+include ../components/example-card/example-card
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="styles.min.css")
+    title My layout examples
+  body.page
+    header.page__header
+      h1.page__hello-title Hello!
+    main.page__content
+      +example-card
