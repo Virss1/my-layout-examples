@@ -11,6 +11,11 @@ const browserSync = require('browser-sync').create();
 
 function buildHTML() {
   return src('app/pages/**/*.pug')
+    .pipe(data(function (file) {
+      return {
+        require: require,
+      };
+    }))
     .pipe(pug())
     .pipe(rename({ extname: '.html' }))
     .pipe(dest('dist'));
