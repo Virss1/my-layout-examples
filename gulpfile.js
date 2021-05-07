@@ -41,9 +41,9 @@ function cleanDistFolder() {
 }
 
 function startWatch() {
-  watch(['app/pages/*.pug', 'app/components/**/*.pug', 'app/data/*'], buildHTML)
+  watch(['app/pages/**/*.pug', 'app/components/**/*.pug', 'app/data/*'], buildHTML)
     .on('change', browserSync.reload);
-  watch(['app/pages/*.scss', 'app/components/**/*.scss'], buildStyles);
+  watch(['app/pages/**/*.scss', 'app/components/**/*.scss'], buildStyles);
 }
 
 function browsersync() {
