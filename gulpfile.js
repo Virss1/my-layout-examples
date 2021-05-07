@@ -27,6 +27,9 @@ function buildStyles() {
     .pipe(concat('styles.min.css'))
     .pipe(autoprefixer())
     .pipe(cleancss())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
+}
     .pipe(dest('dist'));
 }
 
