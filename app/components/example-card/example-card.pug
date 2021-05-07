@@ -1,5 +1,4 @@
-mixin example-card
-  .example-card
-    img.example-card__preview(src="" alt="example-preview")
-    h3.example-card__title A title
-    a.example-card__link(href="#") A link
+mixin example-card({ title = "", link = "" })
+  a.example-card(href=link)
+    img.example-card__preview(src="" alt=title + " preview")
+    h3.example-card__title= title
