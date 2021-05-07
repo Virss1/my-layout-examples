@@ -1,4 +1,4 @@
-include ../components/example-card/example-card
+include ../../components/example-card/example-card
 
 -
   const fs = require('fs');
@@ -15,8 +15,8 @@ html(lang="en")
   body.page
     header.page__header
       h1.page__main-title Hello, my name is Ivan Riskov
-      h2.page__subtitle Here are examples of my layouts
-    main.page__content
+      h2.page__subtitle-2 Here are examples of my layouts
+    div.page__content
       each card in JSON.parse(cardsData)
         .page__card
           +example-card({ title: card.title, link: card.link })
