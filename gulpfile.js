@@ -55,6 +55,7 @@ function browsersync() {
 exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
 exports.transferImages = transferImages;
+exports.cleanDistFolder = cleanDistFolder;
 exports.startWatch = startWatch;
 exports.browsersync = browsersync;
 
