@@ -30,6 +30,9 @@ function buildStyles() {
     .pipe(dest('dist'))
     .pipe(browserSync.stream());
 }
+
+function transferImages() {
+  return src('app/images/*')
     .pipe(dest('dist'));
 }
 
@@ -39,6 +42,7 @@ function cleanDistFolder() {
 
 exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
+exports.transferImages = transferImages;
 exports.build = series(
   series,
   buildHTML,
