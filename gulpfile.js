@@ -6,6 +6,8 @@ const pug = require('gulp-pug');
 const scss = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
+const data = require('gulp-data');
+const browserSync = require('browser-sync').create();
 
 function buildHTML() {
   return src('app/pages/**/*.pug')
