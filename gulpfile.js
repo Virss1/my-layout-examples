@@ -40,9 +40,24 @@ function cleanDistFolder() {
   return del('dist', { force: true });
 }
 
+function startWatch() {
+  watch(['app/pages/*.pug', 'app/components/**/*.pug', 'app/data/*'], buildHTML)
+    .on('change', browserSync.reload);
+  watch(['app/pages/*.scss', 'app/components/**/*.scss'], buildStyles);
+}
+
+function browsersync() {
+  browserSync.init({
+    server: { baseDir: 'dist/' },
+  });
+}
+
 exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
 exports.transferImages = transferImages;
+exports.startWatch = startWatch;
+exports.browsersync = browsersync;
+
 exports.build = series(
   series,
   buildHTML,
