@@ -1,6 +1,14 @@
 .page {
+  background-color: rgb(136, 136, 136);
 
   &__content {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+    grid-template-columns: repeat(auto-fit, 200px);
   }
 
+  &__card {
+    width: min-content;
+  }
 }
