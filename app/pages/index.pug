@@ -1,5 +1,9 @@
 include ../components/example-card/example-card
 
+-
+  const fs = require('fs');
+  const cardsData = fs.readFileSync("app/data/cards.json");
+
 doctype html
 html(lang="en")
   head
@@ -12,4 +16,6 @@ html(lang="en")
     header.page__header
       h1.page__hello-title Hello!
     main.page__content
-      +example-card
+      each card in JSON.parse(cardsData)
+        .page__card
+          +example-card({ title: card.title, link: card.link })
