@@ -36,6 +36,12 @@ function cleanDistFolder() {
 
 exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
+exports.build = series(
+  series,
+  buildHTML,
+  buildStyles,
+  transferImages
+);
 
 exports.default = series(
   cleanDistFolder,
