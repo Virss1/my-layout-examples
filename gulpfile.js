@@ -17,7 +17,7 @@ function buildHTML() {
       };
     }))
     .pipe(pug())
-    .pipe(rename({ extname: '.html' }))
+    .pipe(rename({ dirname: '', extname: '.html' }))
     .pipe(dest('dist'));
 }
 
