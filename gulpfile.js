@@ -70,5 +70,8 @@ exports.default = series(
   parallel(
     buildHTML,
     buildStyles,
-  )
+    transferImages,
+    startWatch,
+    browsersync,
+  ),
 );
