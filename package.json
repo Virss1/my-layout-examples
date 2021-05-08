@@ -4,7 +4,8 @@
   "description": "here are some my layout examples made in HTML & CSS",
   "main": "index.js",
   "scripts": {
-    "testHTML": "gulp cleanDistFolder buildHTML --series"
+    "testHTML": "gulp cleanDistFolder buildHTML --series",
+    "ghDeploy": "gulp build ghDeploy --series"
   },
   "keywords": [
     "frontend",
