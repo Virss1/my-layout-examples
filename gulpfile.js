@@ -50,7 +50,11 @@ function buildJS() {
 
 function transferImages() {
   return src('app/images/*')
-    .pipe(dest('dist'));
+    .pipe(newer('dist/images'))
+    .pipe(imagemin())
+    .pipe(dest('dist/images'));
+}
+
 function transferExamples() {
   return src('app/examples/**', { buffer: false })
     .pipe(dest('dist/examples'));
