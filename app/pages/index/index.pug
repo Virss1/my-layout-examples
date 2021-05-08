@@ -10,7 +10,8 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="styles.min.css")
+    // inject:css
+    // endinject
     title My layout examples
   body.page
     header.page__header
@@ -21,3 +22,5 @@ html(lang="en")
       each card in JSON.parse(cardsData)
         .page__card
           +example-card({ title: card.title, link: card.link })
+    // inject:js
+    // endinject

@@ -15,14 +15,18 @@ const newer = require('gulp-newer');
 const ghPages = require('gulp-gh-pages');
 
 function buildHTML() {
-  return src('app/pages/**/*.pug')
+  const html = src('app/pages/**/*.pug')
     .pipe(data(function (file) {
       return {
         require: require,
       };
     }))
     .pipe(pug())
-    .pipe(rename({ dirname: '', extname: '.html' }))
+    .pipe(rename({ dirname: '', extname: '.html' }));
+
+  const sources = src(['dist/*.js', 'dist/*.css'], { read: false });
+
+  return html.pipe(inject(sources, { addRootSlash: false, ignorePath: 'dist/' }))
     .pipe(dest('dist'));
 }
 
