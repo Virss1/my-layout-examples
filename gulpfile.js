@@ -95,18 +95,24 @@ exports.browsersync = browsersync;
 exports.ghDeploy = ghDeploy;
 
 exports.build = series(
-  series,
-  buildHTML,
+  cleanDistFolder,
   buildStyles,
-  transferImages
+  buildJS,
+  buildHTML,
+  transferImages,
+  transferExamples,
 );
 
 exports.default = series(
   cleanDistFolder,
   parallel(
-    buildHTML,
-    buildStyles,
     transferImages,
+    transferExamples,
+    buildStyles,
+    buildJS,
+  ),
+  parallel(
+    buildHTML,
     startWatch,
     browsersync,
   ),
