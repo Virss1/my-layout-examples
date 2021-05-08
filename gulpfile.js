@@ -68,6 +68,8 @@ function startWatch() {
   watch(['app/pages/**/*.pug', 'app/components/**/*.pug', 'app/data/*'], buildHTML)
     .on('change', browserSync.reload);
   watch(['app/pages/**/*.scss', 'app/components/**/*.scss'], buildStyles);
+  watch('app/components/**/*.js', buildJS);
+  watch('app/images', transferImages).on('change', browserSync.reload);
 }
 
 function browsersync() {
