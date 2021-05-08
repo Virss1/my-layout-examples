@@ -1,5 +1,5 @@
 mixin example-card({ title = "", link = "" })
+  - const name = title.toLowerCase().replace(/\s/g, '-');
   a.example-card(href=link target="_blank")
-    span.example-card__arrow(title="Ссылка откроется в новой вкладке") ⇗
-    img.example-card__preview(src="" alt=title + " preview")
+    img.example-card__preview(src=`./images/${name}-preview.jpg` alt=`${name}-preview`)
     h3.example-card__title= title
