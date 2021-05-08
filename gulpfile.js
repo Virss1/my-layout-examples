@@ -51,6 +51,9 @@ function buildJS() {
 function transferImages() {
   return src('app/images/*')
     .pipe(dest('dist'));
+function transferExamples() {
+  return src('app/examples/**', { buffer: false })
+    .pipe(dest('dist/examples'));
 }
 
 function cleanDistFolder() {
