@@ -78,6 +78,11 @@ function browsersync() {
   });
 }
 
+function ghDeploy() {
+  return src('dist/**/*')
+    .pipe(ghPages());
+}
+
 exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
 exports.transferImages = transferImages;
