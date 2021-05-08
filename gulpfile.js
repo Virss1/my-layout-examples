@@ -85,10 +85,14 @@ function ghDeploy() {
 
 exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
+exports.buildJS = buildJS;
 exports.transferImages = transferImages;
+exports.transferExamples = transferExamples;
 exports.cleanDistFolder = cleanDistFolder;
 exports.startWatch = startWatch;
 exports.browsersync = browsersync;
+
+exports.ghDeploy = ghDeploy;
 
 exports.build = series(
   series,
