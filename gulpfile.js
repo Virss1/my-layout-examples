@@ -8,6 +8,11 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
 const data = require('gulp-data');
 const browserSync = require('browser-sync').create();
+const uglify = require('gulp-uglify-es').default;
+const inject = require('gulp-inject');
+const imagemin = require('gulp-imagemin');
+const newer = require('gulp-newer');
+const ghPages = require('gulp-gh-pages');
 
 function buildHTML() {
   return src('app/pages/**/*.pug')
