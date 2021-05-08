@@ -40,6 +40,14 @@ function buildStyles() {
     .pipe(browserSync.stream());
 }
 
+function buildJS() {
+  return src('app/components/**/*.js')
+    .pipe(concat('scripts.min.js'))
+    .pipe(uglify())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
+}
+
 function transferImages() {
   return src('app/images/*')
     .pipe(dest('dist'));
