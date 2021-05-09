@@ -55,8 +55,8 @@ function transferImages() {
     .pipe(dest('dist/images'));
 }
 
-function cleanDistFolder() {
-  return del('dist', { force: true });
+async function cleanDistFolder() {
+  return await del(['dist/*', '!dist/examples']);
 }
 
 function startWatch() {
