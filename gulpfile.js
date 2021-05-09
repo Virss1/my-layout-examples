@@ -55,11 +55,6 @@ function transferImages() {
     .pipe(dest('dist/images'));
 }
 
-function transferExamples() {
-  return src('app/examples/**', { buffer: false })
-    .pipe(dest('dist/examples'));
-}
-
 function cleanDistFolder() {
   return del('dist', { force: true });
 }
@@ -87,7 +82,6 @@ exports.buildHTML = buildHTML;
 exports.buildStyles = buildStyles;
 exports.buildJS = buildJS;
 exports.transferImages = transferImages;
-exports.transferExamples = transferExamples;
 exports.cleanDistFolder = cleanDistFolder;
 exports.startWatch = startWatch;
 exports.browsersync = browsersync;
@@ -100,14 +94,12 @@ exports.build = series(
   buildJS,
   buildHTML,
   transferImages,
-  transferExamples,
 );
 
 exports.default = series(
   cleanDistFolder,
   parallel(
     transferImages,
-    transferExamples,
     buildStyles,
     buildJS,
   ),
