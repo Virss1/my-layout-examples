@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "testHTML": "gulp cleanDistFolder buildHTML --series",
-    "ghDeploy": "gulp build ghDeploy --series"
+    "ghDeploy": "gulp cleanDistFolder build ghDeploy --series"
   },
   "keywords": [
     "frontend",
