@@ -25,26 +25,32 @@
   },
   {
     "title": "Delivery food",
-    "link": "https://virss1.github.io/delivery-food-2/"
+    "link": "https://virss1.github.io/delivery-food-2/",
+    "source": "https://github.com/Virss1/delivery-food-2"
   },
   {
     "title": "Keksby",
-    "link": "examples/keksby/index.html"
+    "link": "examples/keksby/index.html",
+    "source": "https://github.com/Virss1/my-layout-examples/tree/gh-pages/examples/keksby"
   },
   {
     "title": "Kvast",
-    "link": "examples/kvast/index.html"
+    "link": "examples/kvast/index.html",
+    "source": "https://github.com/Virss1/my-layout-examples/tree/gh-pages/examples/kvast"
   },
   {
     "title": "Breakout game mod",
-    "link": "https://virss1.github.io/Breakout-game-mod/"
+    "link": "https://virss1.github.io/Breakout-game-mod/",
+    "source": "https://github.com/Virss1/Breakout-game-mod"
   },
   {
     "title": "MazeGame",
-    "link": "https://virss1.github.io/MazeGame/"
+    "link": "https://virss1.github.io/MazeGame/",
+    "source": "https://github.com/Virss1/MazeGame"
   },
   {
     "title": "ColorClock",
-    "link": "https://virss1.github.io/ColorClock/"
+    "link": "https://virss1.github.io/ColorClock/",
+    "source": "https://github.com/Virss1/ColorClock"
   }
 ]

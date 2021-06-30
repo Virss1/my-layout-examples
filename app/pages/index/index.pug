@@ -15,7 +15,7 @@ html(lang="en")
     title My layout examples
   body.page
     header.page__header
-      h1.page__main-title Hello, my name is 
+      h1.page__main-title Hello, my name is&nbsp;
         a.page__my-name(href="https://github.com/Virss1" target="_blank") Ivan Riskov
         |, I am frontend developer
       h2.page__subtitle-2 Here are examples of my works
@@ -23,6 +23,6 @@ html(lang="en")
     main.page__content
       each card in JSON.parse(cardsData)
         .page__card
-          +example-card({ title: card.title, link: card.link })
+          +example-card({ title: card.title, link: card.link, source: card.source })
     // inject:js
     // endinject

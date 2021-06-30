@@ -1,6 +1,23 @@
-mixin example-card({ title = "", link = "" })
+mixin example-card({ title = "", link = "", source = "" })
   - const name = title.toLowerCase().replace(/\s/g, '-');
-  a.example-card(href=link target="_blank")
-    img.example-card__preview(src=`./images/${name}-preview.jpg` alt=`${name}-preview`)
-    .example-card__shadow
-    h3.example-card__title= title
+  - let linkDomen = '';
+  -
+    ['jsfiddle', 'github.io', 'examples', 'github.com'].forEach((domen) => {
+      if (link.includes(domen)) {
+        if (domen === 'examples') {
+          linkDomen = './examples';
+        } else {
+          linkDomen = domen;
+        }
+      }
+    });
+  .example-card
+    a.example-card__link(href=link target="_blank")
+      img.example-card__preview(src=`./images/${name}-preview.jpg` alt=`${name}-preview`)
+      .example-card__shadow
+    .example-card__bottom-container
+      if (source)
+        a.example-card__source-link(href=source target="_blank") Source code
+      h3.example-card__title
+        a.example-card__title-link(href=link target="_blank")= title
+        span.example-card__link-hint= linkDomen

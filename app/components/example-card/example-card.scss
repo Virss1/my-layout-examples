@@ -15,17 +15,21 @@
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     transform: translate(-3px, -3px);
 
-    & > .example-card__title::after {
-      visibility: visible;
-    }
-
-    & > .example-card__shadow {
+    & .example-card__shadow {
       opacity: 0;
       visibility: hidden;
     }
 
-    & > .example-card__preview {
+    & .example-card__preview {
       border-bottom: 1px solid grey;
+    }
+
+    & .example-card__title {
+      text-decoration: underline 2px;
+
+      & > .example-card__link-hint {
+        opacity: 1;
+      }
     }
   }
 
@@ -47,24 +51,65 @@
     transition: opacity 0.3s;
   }
 
-  &__title {
-    margin-left: 1em;
-    margin-right: 1em;
-    width: fit-content;
-    max-width: 100%;
-    position: relative;
+  &__link,
+  &__title-link {
+    text-decoration: none;
+    color: black;
+  }
 
-    &::after {
-      display: block;
-      content: '';
-      background-image: url('images/open_in_new_black_18dp.svg');
-      position: absolute;
-      top: -5px;
-      left: calc(100% + 5px);
-      width: 18px;
-      height: 18px;
-      text-align: center;
-      visibility: hidden;
+  &__bottom-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    bottom: 0;
+  }
+
+  &__title {
+    display: block;
+    position: relative;
+    width: fit-content;
+    max-width: 50%;
+    margin: 0;
+  }
+
+  &__link-hint {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 5px);
+    height: 18px;
+    text-align: center;
+    opacity: 0;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px 4px;
+    border-radius: 7px;
+    background-color: #ccc;
+    transition: opacity 0.3s;
+  }
+
+  &__source-link {
+    order: 1;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+
+      & + .example-card__title {
+        text-decoration: none;
+
+        & > .example-card__link-hint {
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+      }
     }
   }
 }
